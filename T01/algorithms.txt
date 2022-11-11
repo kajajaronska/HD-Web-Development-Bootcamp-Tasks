@@ -1,0 +1,14 @@
+// SCENARIO 1
+
+request user to input their first name 
+store user's input in the variable called "firstName"
+print "Hello" and "firstName" variable
+
+
+// SCENARIO 2
+
+create a variable "currentYear" to store the current year (i.e. 2022)
+request user to enter their age
+store user's input in variable called "userAge"
+substract "userAge" from "currentYear" and store output in the variable called "userBirthYear"
+print the following statement "Based on your age of ["userAge"], it looks like you were born in ["userBirthYear"]
