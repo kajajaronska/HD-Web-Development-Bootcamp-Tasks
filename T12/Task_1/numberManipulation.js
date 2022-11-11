@@ -37,3 +37,16 @@ let average = (total/userNumbers.length).toFixed(2);
 
 console.log(`Average of all your numbers is ${average}`);
 
+///////////////////////////////////////////////////////////
+// Finding median value of all numbers and logging it for the user
+
+function median(arr) {
+    // Sorting numbers from smallest to largest
+    let sorted = [...arr].sort((a,b) => a - b);
+    console.log(sorted);
+
+    // User's array is fixed to 10 elements, so to calculate media we have to take an average of 5th and 6th element
+    return (sorted[4]+sorted[5])/2;
+}
+
+console.log(`Median number of your list is ${median(userNumbers)}.`);
