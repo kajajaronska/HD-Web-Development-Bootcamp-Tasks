@@ -1,0 +1,7 @@
+request user to input a number and store it in a variable called "n"
+check if variable "n" is a prime number 
+    if "n" is a prime number
+        output "Prime"
+    if "n" is not a prime number
+        output "Not prime"
+

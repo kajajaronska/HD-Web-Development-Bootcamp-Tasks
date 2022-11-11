@@ -1,0 +1,43 @@
+1. Plagiarism is using somebody else's work or ideas and submitting it as your own on purpose.
+
+2. Please see below four types of plagiarism: 
+
+Direct plagiarism - taking all or part of somebody else's work and using it in your own work directly
+or with some slight rewording. Example of this would be copying a paragraph from the book without
+without referencing original source. 
+
+Self-plagiarism - using your own, previously published idea, in a new project without referncing.
+Example of this could be using a solution build specifically for a past project and using it in your new project without a mention.
+
+Mosaic plagiarism - based on the provided lecture notes it means taking advantage of multiple sources and putting them together, sometimes also rewording and using synonyms, to pretend the work is your own. 
+However, after doing some research on this topic I gathered that mosaic plagiarism (also called patchwork) can have two approaches:
+"1.Plagiarising One Author or Piece of Text."(https://fixgerald.com/blog/mosaic-plagiarism) and
+"2.Using Multiple Sources."(https://fixgerald.com/blog/mosaic-plagiarism)
+
+Please see the example below (https://fixgerald.com/blog/mosaic-plagiarism).
+
+Original source:
+“Science knows no country because knowledge belongs to humanity and is the torch which illuminates the world.
+Science is the highest personification of the nation because that nation will remain the first which carries the furthest
+the works of thought and intelligence.” – Louis Pasteur.
+
+Plagiarised: 
+We know how important science is and that without it, we wouldn’t be able to grow and develop.
+It’s what makes us human and sets us apart from all the other species.
+Science is the highest personification of the nation because that nation will remain the first which carries the furthest
+the works of thought and intelligence.”
+
+Accidental plagiarism - getting inspired by somebody else's idea and then copying without realising that you are doing so. 
+Example of this would be a group of developers speaking about how to solve a particular problem, which could lead to each 
+developer solving this problem using exactly the same solution without realising so. 
+
+3. To avoid plagiarism in my work I will make sure to:
+- comment my code if I have based my work on any external source to explain what 
+I learnt from it and how I have applied it in my own solution
+- add a comment with a reference to any source I used with a description of how it helped me solving the task
+
+
+References:
+Additional Reading - Plagiarism Policy.pdf (2021) obtained as a part of HyperionDev Web Development Bootcamp
+Everything You Need to Know About Mosaic Plagiarism (26 Aug 2021) https://fixgerald.com/blog/mosaic-plagiarism
+

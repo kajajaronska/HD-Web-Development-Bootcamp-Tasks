@@ -1,0 +1,48 @@
+// SCENARIO 1
+
+create array "vowels" storing all possible vowels
+create empty array called "userInput" to store user's input
+create variable "vowelsNum" with a value of 0 to store the final output
+
+request the user to enter random letter
+    check the type of input
+        if the input is a letter
+            add the input to the "userInput" array
+        if the input is a number proceed to print the final output of "vowelsNum"
+            loop through "userInput" to check each element against "vowels" array
+                if element exists in the "vowels" array
+                    increase "vowelsNum" by 1
+                if element does not exist in the "vowels" array 
+                    proceed to the next element
+output "vowelsNum" to show total number of vowels entered by the user
+
+
+// SCENARIO 2
+
+create an array "numbersArr" storing all numbers
+
+create "evenTotal" variable with initial value of 0 to store total sum of even numbers
+create "oddTotal" variable with initial value of 0 to store total sum of odd numbers
+create "evenQuantity" variable with initial value of 0 to store number of even numbers
+create "oddQuantity" variable with initial value of 0 to store number of odd numbers
+
+loop through "numbersArr" to find integers and to determine whether number is odd or even
+    if number is an integer
+        check if number is even
+            add number to "evenTotal" variable
+            increase "evenQuantity" by 1
+        check if number is odd (not even)
+            add number to "oddTotal" variable
+            increase "oddQuantity" by 1
+    if number is not an integer
+        skip to the next number
+
+divide "evenTotal" by "evenQuantity" and print the average of all even numbers
+divide "oddTotal" by "oddQuantity" and print the average of all odd numbers
+
+
+// SCENARIO 3
+
+create an array "listOfNames" storing all names
+sort the array in alphabetical order by comparing first letters of each name
+print out each element from the "listOfNames" variable
