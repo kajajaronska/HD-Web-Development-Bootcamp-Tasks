@@ -30,3 +30,10 @@ console.log(`The highest number on your list is: ${highest} with an index of ${u
 let lowest = Math.min(...userNumbers);
 
 console.log(`The highest number on your list is: ${lowest} with an index of ${userNumbers.indexOf(lowest)}.`);
+
+///////////////////////////////////////////////////////////
+// Finding average of all numbers and logging it for the user
+let average = (total/userNumbers.length).toFixed(2);
+
+console.log(`Average of all your numbers is ${average}`);
+
