@@ -31,10 +31,10 @@ function multiply(num1, num2) {
 
 // Function to divide first number by second number
 function divide(num1, num2) {
-    return total = num1 - num2;
+    return total = num1 / num2;
 };
 
-function output(operatorSign, total) {
+function output(operatorSign) {
     console.log(`${firstNum} ${operatorSign} ${secondNum} = ${total}` )
 }
 
@@ -42,14 +42,14 @@ function output(operatorSign, total) {
 // If statement to determine which operation to perform depending on user's input
 if(operator === "add") {
     add(firstNum,secondNum);
-    output("+",total);
+    output("+");
 } else if (operator === "substract") {
     substract(firstNum,secondNum);
-    output("-",total)
+    output("-")
 } else if (operator === "multiply") {
     multiply(firstNum,secondNum);
-    output("x", total);
+    output("x");
 } else if (operator === "divide") {
     divide(firstNum, secondNum);
-    output("÷", total);
+    output("÷");
 }
