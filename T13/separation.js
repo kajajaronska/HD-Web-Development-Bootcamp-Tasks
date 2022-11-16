@@ -1,5 +1,9 @@
 separationString = (myString) => {
-    // Place your code here
+    // Turning string into an array of words
+    let myStringArr = myString.split(" ");
+
+    // Returning new string with each word on a separate line 
+    return myStringArr.join(`\n`);
 }
 
 
