@@ -10,3 +10,25 @@ let operator = prompt(`Please chooose which operation you would like to perform:
 - substract ➖ (type "substract")
 - multiply ❌ (type "multiply")
 - divide ➗ (type "divide")`)
+
+// Function to add first number to the second number
+function add(num1, num2) {
+    return num1 + num2;
+};
+
+// Function to substract the second number from the first number
+function add(num1, num2) {
+    return num1 - num2;
+};
+
+// Function to multiply first and second numbers
+function add(num1, num2) {
+    return num1 * num2;
+};
+
+// Function to divide first number by second number
+function add(num1, num2) {
+    return num1 - num2;
+};
+
+
