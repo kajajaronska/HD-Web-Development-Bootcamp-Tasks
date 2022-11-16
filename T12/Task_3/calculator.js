@@ -34,6 +34,7 @@ function divide(num1, num2) {
     return total = num1 / num2;
 };
 
+// Function to put the output for user together keeping the code dry
 function output(operatorSign) {
     console.log(`${firstNum} ${operatorSign} ${secondNum} = ${total}` )
 }
@@ -52,4 +53,6 @@ if(operator === "add") {
 } else if (operator === "divide") {
     divide(firstNum, secondNum);
     output("÷");
+} else {
+    console.log(`Looks like "${operator}" is not a valid operator. Please refresh the browser to try again🥶`)
 }
