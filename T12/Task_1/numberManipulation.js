@@ -29,13 +29,13 @@ console.log(`The highest number on your list is: ${highest} with an index of ${u
 // Finding index of the minimum value and logging it for the user
 let lowest = Math.min(...userNumbers);
 
-console.log(`The highest number on your list is: ${lowest} with an index of ${userNumbers.indexOf(lowest)}.`);
+console.log(`The lowest number on your list is: ${lowest} with an index of ${userNumbers.indexOf(lowest)}.`);
 
 ///////////////////////////////////////////////////////////
 // Finding average of all numbers and logging it for the user
 let average = (total/userNumbers.length).toFixed(2);
 
-console.log(`Average of all your numbers is ${average}`);
+console.log(`Average of all your numbers is ${average}.`);
 
 ///////////////////////////////////////////////////////////
 // Finding median value of all numbers and logging it for the user
@@ -43,9 +43,8 @@ console.log(`Average of all your numbers is ${average}`);
 function median(arr) {
     // Sorting numbers from smallest to largest
     let sorted = [...arr].sort((a,b) => a - b);
-    console.log(sorted);
 
-    // User's array is fixed to 10 elements, so to calculate media we have to take an average of 5th and 6th element
+    // User's array is fixed to 10 elements, so to calculate median we have to take an average of 5th and 6th element
     return (sorted[4]+sorted[5])/2;
 }
 
