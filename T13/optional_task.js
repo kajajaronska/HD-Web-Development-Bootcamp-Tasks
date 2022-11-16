@@ -1,5 +1,13 @@
 isPalindrome = (myString) => {
-      
+    // Revering myString by converting it into an array, then reversing elements and joining back into a string
+    let myStringReversed = myString.split("").reverse().join("");
+
+    // Comparing the original string with the reversed version of it
+    if(myString === myStringReversed) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
