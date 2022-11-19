@@ -6,7 +6,7 @@
 // Capital letters
 // A = 65; Z = 90
 
-// Ask user to input the message they would like to encode
+// Asking user to input the message they would like to encode
 let message = prompt(`Please enter the message you would like to encode.
 N.B.This cypher program encodes only letters and spaces.`);
 
@@ -36,29 +36,28 @@ function cypher(message) {
         if(unicode >= 65 && unicode <= 90) {
             if(unicode <= 75) {
                 cypheredUnicode = unicode + 15;
-                pushFunc(cypheredUnicode);
             } else {
                 cypheredUnicode = 64 + (15 - (90 - unicode));
-                pushFunc(cypheredUnicode);
             }
         // Accounting for lowercase letters 
         } else if (unicode >= 97 && unicode <= 122){
             if(unicode <= 107) {
                 cypheredUnicode = unicode + 15;
-                pushFunc(cypheredUnicode);
             } else {
                 cypheredUnicode = 96 + (15 - (122 - unicode));
-                pushFunc(cypheredUnicode);
             }
 
         // Accounting for space
         } else if(unicode === 32){
-            pushFunc(32);
+            cypheredUnicode = 32;
         
         // Pushing space to the message if user enters anything other than a letter or a space
         } else {
-            pushFunc(32);
+            cypheredUnicode = 32;
         }    
+
+        // Pushing cyphered letter (or space) into cypheredArr
+        pushFunc(cypheredUnicode);
     })
 
     // Returning encoded message by joining array into a string
