@@ -30,11 +30,24 @@ const diagonalWinInverse = [
 // You may add additional parameters to assist you
 function evaluatePlay(grid){
 
+    // Creating varaible to hold winner
+    let winner;
+
     // forLoop for each case to check every row/column to match scenario
 
-    // grid.forEach(row => {
-    //     if()
-    // });
+    // CASE 1: Row win
+    for(let i=0; i < grid.length; i++) {
+        let row = grid[i];
+        if(row[0] === row[1] && row[0] === row[2]){
+            winner = row[0];
+            break;
+        } else {
+            continue;
+        }
+    }
+    
+
+    
 
     
     // if statement within loops
