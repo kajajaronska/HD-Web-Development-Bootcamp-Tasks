@@ -70,6 +70,7 @@ function evaluatePlay(grid) {
   }
 
   //CASE 4: Diagonal win inverse
+   // If statement checking if elements match diagonally in inverse and are not empty
   if (grid[0][0] === grid[1][1] && grid[0][0] === grid[2][2] && grid[0][0]) {
     winner = grid[0][0];
   }
@@ -81,6 +82,7 @@ function evaluatePlay(grid) {
   // Variable holding output of the game
   let output = `${winner} Won \n${loser} Lost`;
 
+  // Printing the result of the game for the loser accounting for the no winner scenario
   if (!winner && !loser) {
     console.log(
       `Looks like there was no clear winner this time. Try again! ❌⭕`
