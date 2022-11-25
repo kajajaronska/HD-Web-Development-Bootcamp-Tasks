@@ -1,11 +1,13 @@
-// Asking user to choose whether to calculate distance, time or speed
-// let userChoice = prompt("Please choose whether you want to calculate distance, time or speed");
-
-let userChoice = "speed";
 
 while (true) {
-  // let userChoice = prompt("Please choose whether you want to calculate distance, time or speed");
-  let userChoice = "time";
+  try {
+    
+// let userChoice = prompt("Please choose whether you want to calculate distance, time or speed.💨");
+    let userChoice = "time";
+    if(userChoice == "") {
+        throw "You need to choose something! Distance, time or travel? 🚗"
+    }
+
 
 // Scenario 1: DISTANCE
   if (userChoice === "distance") {
@@ -40,5 +42,8 @@ while (true) {
 
   }
 
+} catch (err) {
+    // something;
+}
 
 }
