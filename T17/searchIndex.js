@@ -1,35 +1,22 @@
 let searchIndex = function(array, word) {
 
-    // Base case: word is found or the array is finished 
+    // Base case: checking if the last element of the array equals word
     if(array[array.length - 1] === word) {
-        console.log("word was found at index" + (array.length - 1))
-        let indexFound = array.length - 1;
-        return indexFound;
-    // Base case 2: the array is finished and word was not found
-    } else if (array.length === 0){
-        console.log("word was not found at all" + array)
+        return (array.length - 1);
+
+    // Base case 2: shallow copy of new array is empty, which means word was not found
+    } else if (array.length === 0) {
         return -1;
-    // Recursive call: continue searching through the array
+
+    // Recursive call
     } else {
-        array.pop();
-        console.log(`Word not found at this position; current array: ${array}`)
-        return searchIndex(array,word);
-    };   
-
-    // if(array[array.length - 1] === word) {
-    //     console.log(`Word was found at position ${array.length - 1}`);
-    //     return (array.length - 1);
-    // } else {
-    //     console.log("else statement");
-    //     // return;
-    // }
-
-
-
-
+        // Creating a shallow copy of the original array and removing the last element
+        newArray = array.slice(0,-1)
+        // Calling function on the shallow copy newArray
+        return searchIndex(newArray, word);
+    }
 };
 
 let dataArray = ["java", "html", "javascripts", "css"];
 
-console.log(searchIndex(dataArray, "html"));
-console.log(dataArray);
+console.log(searchIndex(dataArray, "javascripts"));
