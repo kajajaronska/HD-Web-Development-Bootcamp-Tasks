@@ -17,7 +17,7 @@ while (true) {
     let speed = 50;
 
     console.log(`If you travel at ${speed}km/h for ${time} hours then your total distance will be ${speed * time}km.`);
-    return;
+    break;
 
 // Scenario 2: TIME
   } else if (userChoice === "time") {
@@ -27,7 +27,7 @@ while (true) {
     let speed = 50;
 
     console.log(`If you travel ${distance}km at ${speed}km/h then it will take you ${distance / speed} hours.`);
-    return;
+    break;
 
 
 // Scenario 3: SPEED
@@ -38,7 +38,7 @@ while (true) {
     let time = 5;
 
     console.log(`If you travelled ${distance}km for ${time} hours then your speed was ${distance / time}km/h.`);
-      return;
+      break;
 
   }
 
