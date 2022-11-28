@@ -1,7 +1,10 @@
 let printValuesOf = (jsObject, keys) => {
-  for (let i = 0; i <= keys.length; i++) {
+  // Bug 4 identified: condition includes one too many iteration due to the "<=" sign;
+  // Updating "<="" to "<""
+  for (let i = 0; i < keys.length; i++) {
     let key = keys[i];
-    console.log(jsObject[k]);
+    // Bug 2 identified: k is not defined; updating with "key"
+    console.log(jsObject[key]);
   }
 }
 
@@ -9,11 +12,13 @@ let simpsonsCatchphrases = {
   lisa: 'BAAAAAART!',
   bart: 'Eat My Shorts!',
   marge: 'Mmm~mmmmm',
-  homer: 'd'oh!',
+  // Bug 1 identified: backslash added to enable use of a single quotation mark
+  homer: 'd\'oh!',
   maggie: '(Pacifier Suck)',
 };
 
-printValuesOf(simpsonsCatchphrases, 'lisa', 'bart', 'homer');
+// Bug 3 identified: second parameter "keys" should be an array for the loop to work
+printValuesOf(simpsonsCatchphrases, ['lisa', 'bart', 'homer']);
 
 // Expected console output:
 
