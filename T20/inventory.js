@@ -20,7 +20,7 @@ let shoe3 = new Shoes("flip-flops", "601G0", 50, "$29");
 let shoe4 = new Shoes("sneakers", "246A1", 90, "$80");
 let shoe5 = new Shoes("slippers", "335D6", 100, "$25");
 
-// Method to search or any shoe within the array
+// Method to search for any shoe within the array
 let findShoes = (arr, shoeName) => {
   // Filtering shoes array by name to find shoes chosen by the user
   let found = arr.filter((el) => el["name"] === shoeName);
@@ -34,17 +34,24 @@ let findShoes = (arr, shoeName) => {
   });
 };
 
-console.log(findShoes(shoesArr, "sneakers"));
+// Calling the findShoes function
+findShoes(shoesArr,"sneakers");
+
 
 // // Method to find a shoe with the lowest value per item
-// let lowestValue = shoesArr.reduce((previous,current) => {
-//     return previous["value"] < current["value"] ? previous : current;
-// });
+let lowestValue = (arr) => {
+// Using reduce method to boil down the array to the item with lowest value
+ let lowest = arr.reduce((previous,current) => {
+    // Using ternary operator
+    return previous["value"] < current["value"] ? previous : current;
+});
 
-// console.log(lowestValue);
+// // Creating easy to read output
+return console.log(
+    `Lowest value item\n***************************\nProduct code: ${lowest.productCode}\nQuantity: ${lowest.quantity}\nValue: ${lowest.value}
+    `);
+}
+    
+// Calling the lowestValue function
+lowestValue(shoesArr);
 
-// for(property in lowestValue) {
-//     console.log(`${property}: ${lowestValue[property]}`);
-// };
-
-// console.dir(shoesArr);
