@@ -9,25 +9,10 @@ class Shoes {
     shoesArr.push(this);
   }
 
-  // Method setting new name
-  setNewName(newName) {
-    this.name = newName;
-  }
-
-  // Method setting new product code
-  setNewProductCode(newProductCode) {
-    this.productCode = newProductCode;
-  }
-
-  // Method setting new quantity code
-  setNewQuantity(newQuantity) {
-    this.quantity = newQuantity;
-  }
-
-  // Method setting new value code
-  setNewValue(newValue) {
-    this.value = newValue;
-  }
+// Method changing property on the chosen instance of the Class
+editTheAttribute(attribute,newValue) {
+    this[attribute] = newValue;
+}
 }
 
 // Creating an empty array
@@ -94,20 +79,6 @@ let highestValue = (arr) => {
 // Calling the highestValue function
 highestValue(shoesArr);
 
-// Checking methods on the Shoes class
-console.log(shoe1)
-shoe1.setNewName("golf shoes");
+// Checking method on the Shoes class
+shoe1.editTheAttribute("name", "loafers");
 console.log(shoe1);
-
-console.log(shoe2)
-shoe2.setNewProductCode("113X7");
-console.log(shoe2);
-
-console.log(shoe3)
-shoe3.setNewQuantity(99);
-console.log(shoe3);
-
-console.log(shoe4)
-shoe4.setNewValue("$15");
-console.log(shoe4);
-
