@@ -48,10 +48,26 @@ let lowestValue = (arr) => {
 
 // // Creating easy to read output
 return console.log(
-    `Lowest value item\n***************************\nProduct code: ${lowest.productCode}\nQuantity: ${lowest.quantity}\nValue: ${lowest.value}
+    `Lowest value item\n***************************\nName: ${lowest.name}\nProduct code: ${lowest.productCode}\nQuantity: ${lowest.quantity}\nValue: ${lowest.value}
     `);
 }
     
 // Calling the lowestValue function
 lowestValue(shoesArr);
 
+// // Method to find a shoe with the highest value per item
+let highestValue = (arr) => {
+    // Using reduce method to boil down the array to the item with highest value
+     let highest = arr.reduce((previous,current) => {
+        // Using ternary operator
+        return previous["value"] > current["value"] ? previous : current;
+    });
+    
+    // // Creating easy to read output
+    return console.log(
+        `Highest value item\n***************************\nName: ${highest.name}\nProduct code: ${highest.productCode}\nQuantity: ${highest.quantity}\nValue: ${highest.value}
+        `);
+    }
+        
+    // Calling the highestValue function
+    highestValue(shoesArr);
