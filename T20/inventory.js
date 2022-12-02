@@ -9,10 +9,10 @@ class Shoes {
     shoesArr.push(this);
   }
 
-// Method changing property on the chosen instance of the Class
-editTheAttribute(attribute,newValue) {
+  // Method changing property on the chosen instance of the Class
+  editTheAttribute(attribute, newValue) {
     this[attribute] = newValue;
-}
+  }
 }
 
 // Creating an empty array
@@ -22,7 +22,7 @@ let shoesArr = [];
 let shoe1 = new Shoes("sneakers", "123V6", 124, "$50");
 let shoe2 = new Shoes("high-heels", "563F7", 78, "$87");
 let shoe3 = new Shoes("flip-flops", "601G0", 50, "$29");
-let shoe4 = new Shoes("sneakers", "246A1", 90, "$80");
+let shoe4 = new Shoes("loafers", "246A1", 90, "$80");
 let shoe5 = new Shoes("slippers", "335D6", 100, "$25");
 
 // Method to search for any shoe within the array
@@ -79,6 +79,17 @@ let highestValue = (arr) => {
 // Calling the highestValue function
 highestValue(shoesArr);
 
-// Checking method on the Shoes class
-shoe1.editTheAttribute("name", "loafers");
+// Checking the edit method on the Shoes class
+shoe1.editTheAttribute("name", "boots");
 console.log(shoe1);
+
+// Method to order all of the array objects in ascending order alphabetically 
+let sortAscending = (arr) => arr.sort((currentShoe, nextShoe) => {
+  if (currentShoe.name < nextShoe.name) return -1;
+  if (currentShoe.name > nextShoe.name) return 1;
+
+  return 0;
+});
+
+// Sorting shoes array objects in ascending order
+console.log(sortAscending(shoesArr));
