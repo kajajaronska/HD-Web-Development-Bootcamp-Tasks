@@ -3,6 +3,18 @@
 create your email class here
 */
 
+class Email {
+	// instance variables
+	constructor(fromAddress, emailContents){
+		this.fromAddress = fromAddress;
+		this.emailContents = emailContents;
+		this.hasBeenRead = false;
+		this.isSpam = false;
+	}
+
+}
+
+
 
 userChoice = "";
 while(userChoice != "7"){
