@@ -40,7 +40,7 @@ let addEmail = (fromAddress, emailContents) => {
 
 // Function to return number of messages stores in the inbox
 let getCount = (inbox) => {
-	return alert(`You have ${inbox.length} e-mails in your inbox`);
+	return alert(`You have ${inbox.length} e-mails in your inbox 📫📫📫`);
 }
 
 // Function to return contents of an email in the inbox
@@ -104,7 +104,7 @@ let deleteEmail = (inbox) => {
 
 userChoice = "";
 while(userChoice != "7"){
-	userChoice = prompt("What would you like to do:\n 1. Read email\n 2. Mark spam\n3. Send email\n4. Delete email\n5. View spam emails\n6. View unread emails\n7. quit?");
+	userChoice = prompt("What would you like to do:\n1. Read email\n2. Mark spam\n3. Send email\n4. Delete email\n5. View spam emails\n6. View unread emails\n7. Check number of e-mails in your inbox\n8. quit?");
 	// ***READ EMAIL***
 	if(userChoice == "1"){
 		getEmail(inbox);
@@ -138,11 +138,14 @@ while(userChoice != "7"){
 	}else if(userChoice == "6"){
 		getunreadEmails(inbox);
 
-	// // ***QUIT***
+	//***GET NUMBER OF EMAILS***
 	}else if(userChoice == "7"){
+		getCount(inbox);
+
+	//***QUIT***
+	} else if(userChoice == "8"){
 		console.log("Goodbye");
-	}else{
+	} else {
 		console.log("Oops - incorrect input");
-		
 	}
 }
