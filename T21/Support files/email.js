@@ -27,6 +27,14 @@ class Email {
 // Empty array to store e-mails
 let inbox = [];
 
+// Creating few e-mails inside the inbox to test functions with
+inbox.push(new Email("info@plantshop.com","ORDER NUMBER: 567341\n\nThank you for purchasing cacti from us!\nE-mail with delivery details will follow shortly!\nHave a fab day\nPlant Shop 🪴"))
+inbox.push(new Email("mark.smith@techagency.com","Hello Kaja!\nThank you for showing your interest in the Junior Software Engineer position at the Tech Agency.\n We are currently reviewing your aplication and will be in touch shortly.\nBest regards,\nMark Smith"))
+
+// Creating received email to test addEmail function with
+let incomingFromAddress = "hello@canva.com";
+let incomingEmailContents = "Hello Kaja!\nThank you for creating your account with Canva.\nWe cannot wait to see what you design.\nHappy designing!🎨\nTeam @ Canva"
+
 
 // Function to add email to inbox
 let addEmail = (fromAddress, emailContents) => {
