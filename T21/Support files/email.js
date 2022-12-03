@@ -44,7 +44,7 @@ let getCount = (inbox) => {
 }
 
 // Function to return contents of an email in the inbox
-let getEmail = (inbox) => {
+let getEmail = (inbox) => {7
 	// Asking user to input an index of the email
 	let index = Number(prompt("Please enter index of the e-mail you would like to see."));
 
@@ -104,7 +104,7 @@ let deleteEmail = (inbox) => {
 
 userChoice = "";
 while(userChoice != "7"){
-	userChoice = prompt("What would you like to do:\n1. Read email\n2. Mark spam\n3. Send email\n4. Delete email\n5. View spam emails\n6. View unread emails\n7. Check number of e-mails in your inbox\n8. quit?");
+	userChoice = prompt("What would you like to do:\n1. Read email\n2. Mark spam\n3. Send email\n4. Delete email\n5. View spam emails\n6. View unread emails\n7. Check number of e-mails in your inbox\n8. Check incoming e-mail 📩\n9. quit?");
 	// ***READ EMAIL***
 	if(userChoice == "1"){
 		getEmail(inbox);
@@ -142,10 +142,21 @@ while(userChoice != "7"){
 	}else if(userChoice == "7"){
 		getCount(inbox);
 
+	//***CHECK INCOMING E-MAIL***
+	}else if(userChoice == "8"){
+		let choice = prompt("You have one e-mail hanging. Do you want to add it to your inbox? y/n");
+
+		if(choice === "y") {
+			addEmail(incomingFromAddress,incomingEmailContents);
+			alert("This e-mail has been added to your inbox.");
+		} else {
+			alert("No problem! We will destroy this e-mail right away 🔥")
+		}
+
 	//***QUIT***
-	} else if(userChoice == "8"){
+	}else if(userChoice == "9") {
 		console.log("Goodbye");
-	} else {
+	}else {
 		console.log("Oops - incorrect input");
 	}
 }
