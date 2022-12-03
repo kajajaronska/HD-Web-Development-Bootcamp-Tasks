@@ -24,7 +24,8 @@ class Email {
 
 }
 
-
+// Empty array to store e-mails
+let inbox = [];
 
 
 
