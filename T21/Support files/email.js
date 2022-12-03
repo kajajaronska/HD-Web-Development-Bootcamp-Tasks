@@ -20,8 +20,19 @@ class Email {
 
 }
 
+// Creating a class for e-mails sent out
+class EmailSent {
+	constructor(toAddress, emailContents) {
+		this.toAddress = toAddress;
+		this.emailContents = emailContents;
+	}
+}
+
 // Empty array to store e-mails
 let inbox = [];
+
+// Empty array to store sent e-mails
+let outbox = [];
 
 // Creating few e-mails inside the inbox to test the functions with
 inbox.push(new Email("info@plantshop.com","ORDER NUMBER: 567341\n\nThank you for purchasing cacti from us!\nE-mail with delivery details will follow shortly!\n\nHave a fab day\nPlant Shop 🪴"))
@@ -40,7 +51,7 @@ let addEmail = (fromAddress, emailContents) => {
 
 // Function to return number of messages stores in the inbox
 let getCount = (inbox) => {
-	return alert(`You have ${inbox.length} e-mails in your inbox 📫📫📫`);
+	alert(`You have ${inbox.length} e-mails in your inbox 📫📫📫`);
 }
 
 // Function to return contents of an email in the inbox
@@ -102,8 +113,16 @@ let deleteEmail = (inbox) => {
 	return console.log("Specified e-mail has been successfully removed ");
 }
 
+// Function to send e-mail
+let sendEmail = (address, content) => {
+	outbox.push(new EmailSent(address,content));
+
+	alert(`The following e-mail has been sent successfully:\n_____________________\nAddress: ${address}\nContent: ${content}`)
+}
+
+
 userChoice = "";
-while(userChoice != "7"){
+while(userChoice != "9"){
 	userChoice = prompt("What would you like to do:\n1. Read email\n2. Mark spam\n3. Send email\n4. Delete email\n5. View spam emails\n6. View unread emails\n7. Check number of e-mails in your inbox\n8. Check incoming e-mail 📩\n9. quit?");
 	// ***READ EMAIL***
 	if(userChoice == "1"){
@@ -124,7 +143,10 @@ while(userChoice != "7"){
 
 	// ***SEND EMAIL***
 	}else if(userChoice == "3"){
-		//	Place your logic here
+		let address = prompt("Please enter recipients e-mail address:");
+		let content = prompt("E-mail content:");
+
+		sendEmail(address,content);
 
 	// ***DELETE EMAIL***
 	}else if(userChoice == "4"){
@@ -150,7 +172,7 @@ while(userChoice != "7"){
 			addEmail(incomingFromAddress,incomingEmailContents);
 			alert("This e-mail has been added to your inbox.");
 		} else {
-			alert("No problem! We will destroy this e-mail right away 🔥")
+			console.log("No problem! We will destroy this e-mail right away 🔥");
 		}
 
 	//***QUIT***
