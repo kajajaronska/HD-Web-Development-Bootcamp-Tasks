@@ -3,8 +3,8 @@
 create your email class here
 */
 
+// Creating Email class
 class Email {
-	// instance variables
 	constructor(fromAddress, emailContents){
 		this.fromAddress = fromAddress;
 		this.emailContents = emailContents;
@@ -12,7 +12,19 @@ class Email {
 		this.isSpam = false;
 	}
 
+	// Function updating hasBeenRead to true
+	markAsRead() {
+		this.hasBeenRead = true;
+	}
+
+	// Function updating isSpam to true
+	markAsSpam() {
+		this.isSpam = true;
+	}
+
 }
+
+
 
 
 
