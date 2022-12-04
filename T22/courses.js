@@ -16,13 +16,18 @@ class Courses {
 // Creatings subclass Subjects from Courses class
 class Subjects extends Courses {
 
-    constructor(courseName, contactWebsite, price, length, studentsPerClass) {
+    constructor(courseName, contactWebsite, subjectName, price, length, studentsPerClass) {
         // super() method
         super(courseName, contactWebsite);
 
+        this.subjectName = subjectName;
         this.price = price;
         this.length = length;
         this.studentsPerClass = studentsPerClass;
+    }
+
+    displayCourseDetails() {
+        console.log(`Subject ${this.subjectName} belongs to course ${this.courseName}.\nIt will last for ${this.length} weeks and a price tag is ${this.price}.\nYou can find more information on ${this.contactWebsite}`)
     }
 }
 
