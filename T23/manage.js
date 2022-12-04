@@ -1,15 +1,46 @@
-// create super class for employee; attributes: name, typeOfEmployment, payout, currency
-// create subclass for each employee type; attributes: description, calculation method;
-// create two instances per each 
-
 // Creating a super class for Employee
 class Employee {
 
-    constructor(name, typeOfEmployment, currency, salary) {
+    constructor(name, currency, salary) {
         this.name = name;
-        this.typeOfEmployment = typeOfEmployment;
         this.currency = currency;
         this.salary = salary;
     }
-    
+
 }
+
+// Creating subclass for each employment type
+
+// 1. Salaried employees
+class SalariedEmployee extends Employee{
+
+    constructor(name, currency, salary,) {
+        super(name,currency,salary)
+    }
+
+    // Adding a constant attribute to the class
+    typeOfEmployment = "salary";
+}
+
+// 2. Hourly employees
+class HourlyEmployee extends Employee{
+
+    constructor(name, currency, salary,) {
+        super(name,currency,salary)
+    }
+
+    // Adding a constant attribute to the class
+    typeOfEmployment = "hourly";
+}
+
+// 3. Hourly employees
+class HybridEmployee extends Employee{
+
+    constructor(name, currency, salary,) {
+        super(name,currency,salary)
+    }
+
+    // Adding a constant attribute to the class
+    typeOfEmployment = "hybrid";
+};
+
