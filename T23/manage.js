@@ -69,12 +69,30 @@ class HourlyEmployee extends Employee{
 // 3. Hybrid employees
 class HybridEmployee extends Employee{
 
-    constructor(name, currency, salary,) {
-        super(name,currency,salary)
+    constructor(name, currency, sales, target, baseSalary, hourlyRate) {
+        super(name,currency,sales, target)
+        
+        this.baseSalary = baseSalary;
+        this.hourlyRate = hourlyRate;
+    
     }
 
     // Adding a constant attribute to the class
     typeOfEmployment = "hybrid";
+
+    calcPayout(additionalHours = 0) {
+        let payout, description;
+
+        if(this.sales > this.target) {
+            payout = this.baseSalary + (additionalHours * (this.hourlyRate * 1.2))
+            description = `${this.name} hit ${this.currency}${this.sales} sales this month, which was higher than their target of ${this.currency}${this.target}.\nTherefore their hourly rate of ${this.currency}${this.hourlyRate} has been increased by 20% 🎉`
+        } else {
+            payout = this.baseSalary + (additionalHours * this.hourlyRate);
+            description = `${this.name} made ${this.currency}${this.sales} sales this month, which was not higher than their target of ${this.currency}${this.target}.\nTherefore their hourly rate of ${this.currency}${this.hourlyRate} remains unchanged.`;
+        }
+
+        return console.log(`Name: ${this.name}\nEmployee type: ${this.typeOfEmployment}\nBase salary: ${this.currency}${this.baseSalary}\nHourly rate: ${this.currency}${this.hourlyRate}\nAdditional hours: ${additionalHours}\nTarget: ${this.currency}${this.target}\nSales: ${this.currency}${this.sales}\nPayout: ${this.currency}${payout}\nCalculations explained: ${description}`);
+    }
 };
 
 // Creating Salaried Employees instances
@@ -89,7 +107,13 @@ let johnSteal = new HourlyEmployee("John Steal", "$", 30000, 60000, 15);
 let benWarrington = new HourlyEmployee("Ben Warrington", "$", 1000, 500, 10);
 
 
-// console.log(johnSteal);
+// johnSteal.calcPayout(210);
+// benWarrington.calcPayout(160);
 
-johnSteal.calcPayout(210);
-benWarrington.calcPayout(160);
+// Creating Hybrid employees instances
+let agataLocke = new HybridEmployee("Agata Locke", "PLN", 60000, 100000, 4500, 30)
+let michaelGregor = new HybridEmployee("Michael Gregor", "£", 120000, 50000, 5000, 40);
+
+agataLocke.calcPayout();
+michaelGregor.calcPayout(10);
+
