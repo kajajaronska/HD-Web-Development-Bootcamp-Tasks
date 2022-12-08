@@ -51,7 +51,8 @@ class HourlyEmployee extends Employee{
     // Adding a constant attribute to the class
     typeOfEmployment = "hourly";
 
-    calcPayout(hoursLogged) {
+    // Adding default value of 160 (4 weeks x 40 hours)
+    calcPayout(hoursLogged = 160) {
         let payout, description;
 
         if(this.sales > this.target) {
@@ -102,7 +103,7 @@ let meganDolly = new SalariedEmployee("Megan Dolly", "£", 100000, 1000, 2200);
 // paulSmith.calcPayout();
 // meganDolly.calcPayout();
 
-// Creating Hourly employees instances
+// Creating Hourly Employees instances
 let johnSteal = new HourlyEmployee("John Steal", "$", 30000, 60000, 15);
 let benWarrington = new HourlyEmployee("Ben Warrington", "$", 1000, 500, 10);
 
@@ -110,10 +111,10 @@ let benWarrington = new HourlyEmployee("Ben Warrington", "$", 1000, 500, 10);
 // johnSteal.calcPayout(210);
 // benWarrington.calcPayout(160);
 
-// Creating Hybrid employees instances
+// Creating Hybrid Employees instances
 let agataLocke = new HybridEmployee("Agata Locke", "PLN", 60000, 100000, 4500, 30)
 let michaelGregor = new HybridEmployee("Michael Gregor", "£", 120000, 50000, 5000, 40);
 
-agataLocke.calcPayout();
-michaelGregor.calcPayout(10);
+// agataLocke.calcPayout();
+// michaelGregor.calcPayout(10);
 
