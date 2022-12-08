@@ -41,7 +41,7 @@ class SalariedEmployee extends Employee{
 // 2. Hourly employees
 class HourlyEmployee extends Employee{
 
-    constructor(name, currency, hourlyRate, sales, target) {
+    constructor(name, currency, sales, target, hourlyRate) {
         super(name, currency, sales, target)
         
         this.hourlyRate = hourlyRate;
@@ -58,15 +58,15 @@ class HourlyEmployee extends Employee{
             payout = hoursLogged * (this.hourlyRate * 1.5); 
             description = `${this.name} hit ${this.currency}${this.sales} sales this month, which was higher than their target of ${this.currency}${this.target}.\nTherefore their hourly rate of ${this.currency}${this.hourlyRate} has been increased by 50% 🎉`
         } else {
-            payout = hoursLogged & this.hourlyRate;
-            description = `${this.name} made ${this.currency}${this.sales} sales this month, which was not higher than their target of ${this.currency}${this.target}.\nTherefore their hourly rate of ${this.currency}${this.baseSalary} remains unchanged.`;
+            payout = hoursLogged * this.hourlyRate;
+            description = `${this.name} made ${this.currency}${this.sales} sales this month, which was not higher than their target of ${this.currency}${this.target}.\nTherefore their hourly rate of ${this.currency}${this.hourlyRate} remains unchanged.`;
         }
 
-        return console.log(`Name: ${this.name}\nEmployee type: ${this.typeOfEmployment}\nHourly rate: ${this.currency}${this.hourlyRate}\nTarget: ${this.currency}${this.target}\nSales: ${this.currency}${this.sales}\nPayout: ${this.currency}${payout}\nCalculations explained: ${description}`);
+        return console.log(`Name: ${this.name}\nEmployee type: ${this.typeOfEmployment}\nHourly rate: ${this.currency}${this.hourlyRate}\nHours Logged: ${hoursLogged}\nTarget: ${this.currency}${this.target}\nSales: ${this.currency}${this.sales}\nPayout: ${this.currency}${payout}\nCalculations explained: ${description}`);
     }
 }
 
-// 3. Hourly employees
+// 3. Hybrid employees
 class HybridEmployee extends Employee{
 
     constructor(name, currency, salary,) {
@@ -81,15 +81,15 @@ class HybridEmployee extends Employee{
 let paulSmith = new SalariedEmployee("Paul Smith", "£", 20000, 30000, 2000);
 let meganDolly = new SalariedEmployee("Megan Dolly", "£", 100000, 1000, 2200);
 
-paulSmith.calcPayout();
-meganDolly.calcPayout();
+// paulSmith.calcPayout();
+// meganDolly.calcPayout();
 
 // Creating Hourly employees instances
-let johnSteal = new HourlyEmployee("John Steal", "$", 15, 30000, 60000);
-let benWarrington = new HourlyEmployee("Ben Warrington", "$", 10, 1000, 500);
-let someone = new HourlyEmployee()
+let johnSteal = new HourlyEmployee("John Steal", "$", 30000, 60000, 15);
+let benWarrington = new HourlyEmployee("Ben Warrington", "$", 1000, 500, 10);
+
 
 // console.log(johnSteal);
 
-// johnSteal.calcPayout(210);
-// benWarrington.calcPayout(160);
+johnSteal.calcPayout(210);
+benWarrington.calcPayout(160);
