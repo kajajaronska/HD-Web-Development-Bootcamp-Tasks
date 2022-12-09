@@ -1,0 +1,72 @@
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    /* border: red 1px solid; */
+  }
+
+
+
+body {
+    background-color: antiquewhite;
+}
+
+/***************************/
+/* NAVIGATION BAR */
+
+nav {
+    background-color: rgb(180, 145, 93);
+
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+ul {
+    list-style: none;
+
+}
+
+nav li {
+    padding: 5px;
+    margin: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+/***************************/
+/* HEADINGS */
+h1, h2, h3 {
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/***************************/
+/* HEADER */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-header {
+    text-align: center;
+    margin: 10px;
+}
+
+/***************************/
+/* MAIN SECTION */
+
+img {
+    width: 800px;
+}
