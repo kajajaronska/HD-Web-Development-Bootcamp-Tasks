@@ -20,11 +20,11 @@ h1 {
 
 body {
     background-color: black;
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2vh; */
+
 
     font-family: 'Chivo Mono', monospace;
 }
@@ -34,17 +34,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2vh;
-    
+    gap: 2vh; 
 }
+
+.row8 {
+    margin-top: 5vh;
+}
+
 
 .row {
     display: grid;
-    grid-template-columns: repeat(18, 5vw); 
+    grid-template-columns: repeat(18, 5vw);
+    gap: 0.1vw; 
 }
 
 .cell {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,12 +73,6 @@ body {
     font-size: 0.6vw;
 }
 
-/* .periodicTable {
-    display: grid;
-    grid-template-columns: repeat(18, 4vw); 
-    grid-template-rows: repeat(9, 4vw); 
-    gap: 1vh;
-} */
 
 /* CHEMICAL GROUP BLOCK */
 
