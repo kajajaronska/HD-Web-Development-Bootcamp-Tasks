@@ -1,0 +1,27 @@
+p {
+  font-family: Verdana;
+  color: red;
+}
+
+.div1 {
+  background-color: lightblue;
+  width: 300px;
+  padding: 50px;
+  border: 15px solid lightcoral;
+  margin: 20px;
+}
+
+.div2 {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+
+.secondParagraph {
+  color: green;
+}
+
+#firstParagraph {
+  color: blue;
+}
