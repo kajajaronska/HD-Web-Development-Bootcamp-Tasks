@@ -19,7 +19,7 @@ h1 {
 /* MAIN SECTION */
 
 body {
-    background-color: black;
+    background-color: rgb(31, 31, 31);
     display: flex;
     flex-direction: column;
     justify-content: center;
