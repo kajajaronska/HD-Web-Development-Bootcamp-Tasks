@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap');
+
+/* GLOBAL RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/********************/
+/* HEADER */
+
+h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+/********************/
+/* MAIN SECTION */
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+
+    font-family: 'Chivo Mono', monospace;
+}
+
+.cell {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5vw;
+    gap: 0.1vw;
+}
+
+.number, .symbol, .name {
+    color: white;
+    font-size: 0.7vw;
+}
+
+.symbol {
+    font-size: 1vw;
+}
+
+.periodicTable {
+    display: grid;
+    grid-template-columns: repeat(18, 4vw); 
+    grid-template-rows: repeat(9, 4vw); 
+    gap: 1vh;
+}
+
+/* CHEMICAL GROUP BLOCK */
+
+.nonMetal {
+    box-shadow: rgba(241, 176, 35, 0.856) 0px 2px 5px -1px, rgba(255, 235, 52, 0.945)0px 1px 3px -1px;
+}
+
+.alkaliMetal {
+    box-shadow: rgba(255, 58, 58, 0.856) 0px 2px 5px -1px, rgba(255, 52, 52, 0.945) 0px 1px 3px -1px;
+}
+
+.alkalineEarthMetal {
+    box-shadow: rgba(212, 175, 255, 0.856) 0px 2px 5px -1px, rgba(123, 52, 255, 0.945) 0px 1px 3px -1px;
+}
+
+.transitionMetal {
+    box-shadow: rgba(10, 124, 255, 0.87) 0px 2px 5px -1px, rgba(129, 205, 255, 0.945)0px 1px 3px -1px;
+}
+
+.metalloid {
+    box-shadow: rgba(231, 255, 123, 0.856) 0px 2px 5px -1px, rgba(167, 255, 52, 0.945) 0px 1px 3px -1px;
+}
+
+.halogen {
+    box-shadow: rgba(255, 234, 141, 0.911) 0px 2px 5px -1px, rgba(247, 232, 102, 0.945)0px 1px 3px -1px;
+}
+
+.nobleGas {
+    box-shadow: rgba(245, 125, 46, 0.856) 0px 2px 5px -1px, rgba(255, 116, 52, 0.945) 0px 1px 3px -1px;
+}
+
+.postTransition {
+    box-shadow: rgba(63, 245, 46, 0.856) 0px 2px 5px -1px, rgba(52, 255, 86, 0.945) 0px 1px 3px -1px;
+}
+
+.lanthanide {
+    box-shadow: rgba(46, 245, 228, 0.856) 0px 2px 5px -1px, rgba(145, 255, 250, 0.945) 0px 1px 3px -1px;
+}
+
+.actinide {
+    box-shadow: rgba(46, 245, 169, 0.61) 0px 2px 5px -1px, rgba(180, 248, 222, 0.945) 0px 1px 3px -1px;
+}
