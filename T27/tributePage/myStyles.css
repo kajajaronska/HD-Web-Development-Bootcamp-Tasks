@@ -43,6 +43,12 @@ nav a {
 
 /***************************/
 /* HEADINGS */
+h1 {
+    padding: 10px 20px;
+    color: brown;
+}
+
+
 h1, h2, h3 {
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
@@ -67,12 +73,21 @@ header {
 
 img {
     width: 800px;
+    border: blue 1px solid;
 }
 
-header p {
-    margin-right: -575px;
+
+#para1 {
+    color: navy;
+    /* Change your caption(s) for any images to bold, centred, and 20 pixels in size. */
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
 }
 
+#additionalSection ul {
+    color: cadetblue;
+}
 
 /***************************/
 /* MAIN SECTION */
@@ -94,10 +109,39 @@ section {
     gap: 10px;
 }
 
+h3 {
+    width: 25%;
+}
+
+div {
+    margin: 0 0 20px 20px;
+    /* Give all div elements rounded corners or 5 pixels */
+    border: 1px solid rebeccapurple;
+    border-radius: 5px;
+}
+
 /***************************/
 /* ASIDE SECTION */
 
 aside {
-    margin: 0 0 20px 20px;
+    /* Ensure that all aside tags are indented by 20 pixels. */
+    padding-left: 20px;
 }
 
+aside p {
+    /* Select or create a paragraph and add a ‘spring green’, mixed border of 5 pixels to it. */
+    border: springgreen 5px;
+    border-style: dotted dashed solid double;
+}
+
+/***************************/
+/* CLASS SELECTOR FOR TASK 27 */
+
+.specialClassSelector {
+    font-size: 25px;
+    line-height: 20px;
+    color: plum;
+    font-family: monospace;
+    padding: 4px;
+    margin-left: 6px;
+}
