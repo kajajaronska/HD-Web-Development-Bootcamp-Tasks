@@ -45,7 +45,7 @@ body {
 .row {
     display: grid;
     grid-template-columns: repeat(18, 5vw);
-    gap: 0.1vw; 
+    gap: 0.5vw; 
 }
 
 .cell {
