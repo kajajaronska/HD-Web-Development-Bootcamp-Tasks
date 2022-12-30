@@ -1,0 +1,65 @@
+/* FONTS */
+/*****************************/
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans&display=swap');
+
+/*****************************/
+/* VARIABLES */
+/*****************************/
+:root {
+    --charcoal: #424B54;
+    --pewter-blue: #93A8AC;
+    --white: #FFFFFF;
+    --cameo-pink: #E2B4BD;
+    --copper-rose: #9B6A6C;
+}
+
+
+/*****************************/
+/* GLOBAL RESET */
+/*****************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ /* 62.5% of 16px browser font size is 10px */
+html {
+    font-size: 62.5%;
+}
+
+/*****************************/
+/* BODY */
+/*****************************/
+
+body {
+    height: 100vh;
+    font-size: 1.6rem;
+}
+
+/*****************************/
+/* NAVIGATION BAR */
+/*****************************/
+nav {
+    font-size: 2rem;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    justify-items: end;
+
+    margin: 1rem;
+}
+
+.header {
+    
+    justify-self: start;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    gap: 3rem;
+
+
+}
