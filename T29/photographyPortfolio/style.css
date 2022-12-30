@@ -34,7 +34,7 @@ html {
 /*****************************/
 
 body {
-    height: 100vh;
+    height: 100%;
     font-size: 1.6rem;
 
     display: flex;
@@ -101,6 +101,13 @@ header {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
+    margin-top: 5rem;
+}
+
+.photo-section h1 {
+    align-self: flex-start;
+    padding-left: 7rem;
 }
 
 .photos {
@@ -112,4 +119,16 @@ header {
 img {
     width: 40vw;
     height: auto;
+}
+
+
+/*****************************/
+/* FOOTER */
+/*****************************/
+
+footer {
+    height: 2vh;
+    margin-left: 2rem;
+    /* margin: 5rem 0; */
+    /* padding: 5vh 0; */
 }
