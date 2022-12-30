@@ -20,13 +20,17 @@
 * {
     margin: 0;
     padding: 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
  /* 62.5% of 16px browser font size is 10px */
 html {
     font-size: 62.5%;
     
+}
+
+a {
+    text-decoration: none;
 }
 
 /*****************************/
@@ -57,7 +61,6 @@ nav {
 }
 
 .title {
-    
     justify-self: start;
 }
 
@@ -116,20 +119,55 @@ header {
     justify-content: space-around;
 }
 
-img {
+.photos img {
     width: 40vw;
     height: auto;
 }
 
 
 /*****************************/
+/* ABOUT ME PAGE */
+/*****************************/
+
+.about-me {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-side:first-child {
+    margin-top: 5rem;
+}
+
+table {
+    margin-top: 5rem;
+    text-align: center;
+    border: #424b5464 solid thin;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+}
+
+th {
+    padding-bottom: 1rem;
+    border-bottom: #424B54;
+}
+
+.right-side img {
+    width: 25vw;
+    border-radius: 5%;
+}
+
+/*****************************/
 /* FOOTER */
 /*****************************/
 
 footer {
-    height: 2vh;
     margin-left: 2rem;
+    margin-bottom: 1rem;
     margin-top: auto;
-    /* margin: 5rem 0; */
-    /* padding: 5vh 0; */
 }
