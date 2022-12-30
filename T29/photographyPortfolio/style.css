@@ -90,3 +90,26 @@ header {
     justify-content: center;
 
 }
+
+/*****************************/
+/* PHOTO SECTIONS */
+/*****************************/
+
+.photo-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.photos {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    width: 40vw;
+    height: auto;
+}
