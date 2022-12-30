@@ -20,11 +20,13 @@
 * {
     margin: 0;
     padding: 0;
+    border: 1px solid red;
 }
 
  /* 62.5% of 16px browser font size is 10px */
 html {
     font-size: 62.5%;
+    
 }
 
 /*****************************/
@@ -34,6 +36,10 @@ html {
 body {
     height: 100vh;
     font-size: 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 }
 
 /*****************************/
@@ -50,7 +56,7 @@ nav {
     margin: 1rem;
 }
 
-.header {
+.title {
     
     justify-self: start;
 }
@@ -60,6 +66,27 @@ nav ul {
 
     display: flex;
     gap: 3rem;
+}
 
+/*****************************/
+/* HEADER */
+/*****************************/
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    gap: 10rem;
+
+}
+
+.block {
+    width: 30rem;
+    height: 15rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
