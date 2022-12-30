@@ -98,11 +98,13 @@ header {
 
 .block {
     width: 30rem;
-    height: 15rem;
+    height: 10rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background-color: var(--cameo-pink);
 
 }
 
