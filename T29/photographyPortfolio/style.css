@@ -112,6 +112,8 @@ header {
 /* PHOTO SECTIONS */
 /*****************************/
 
+
+/* MAYBE TURN THIS ONE INTO GRID? */ 💥💥💥💥
 .photo-section {
     display: flex;
     flex-direction: column;
@@ -130,13 +132,19 @@ header {
 .photos {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 3rem;
 }
 
 .photos img {
     width: 40vw;
     height: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.fashion img {
+    height: 67vh;
+    width: auto;
 }
 
 
