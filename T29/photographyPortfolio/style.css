@@ -54,7 +54,7 @@ body {
 /* NAVIGATION BAR */
 /*****************************/
 nav {
-  font-size: 2rem;
+  font-size: 2.5rem;
 
   display: grid;
   grid-template-columns: 2fr 1fr;
