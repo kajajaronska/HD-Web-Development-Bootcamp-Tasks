@@ -121,7 +121,12 @@ header {
 }
 
 .photo-section h1 {
+  width: 100%;
+  text-align: center;
   grid-column: 1 / span 2;
+  border-bottom: var(--pewter-blue) 0.5px solid;
+
+  padding-bottom: 10px;
 }
 
 .photo-section img {
@@ -139,14 +144,12 @@ header {
 }
 
 .survey {
-    align-self: center;
+  align-self: center;
 }
 
 .survey form {
-    width: 40rem;
+  width: 50rem;
 }
-
-
 
 /*****************************/
 /* ABOUT ME PAGE */
