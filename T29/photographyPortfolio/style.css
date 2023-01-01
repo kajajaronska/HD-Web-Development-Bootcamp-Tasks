@@ -123,20 +123,17 @@ header {
   grid-column: 1 / span 2;
 }
 
-.photos {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
+.photo-section img {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.photo-section img {
+.horizontal {
   width: 40vw;
   height: auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  
 }
 
-.fashion img {
+.vertical {
   height: 67vh;
   width: auto;
 }
