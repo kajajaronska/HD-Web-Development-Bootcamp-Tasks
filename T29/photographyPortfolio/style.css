@@ -46,6 +46,8 @@ body {
 
   font-family: "Raleway", sans-serif;
   color: var(--charcoal);
+
+  overflow-x: hidden;
 }
 
 /*****************************/
