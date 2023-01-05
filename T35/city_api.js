@@ -14,7 +14,7 @@ let apiResults = [];
 
 // Fetch details from the GeoDB API and assign to population and elevation variables; handle error
 
-const url = 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities';
+const url = 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=Bartoszyce';
 
 const options = {
   method: 'GET',
@@ -27,7 +27,9 @@ const options = {
 fetch(url, options)
 	.then(res => res.json())
 	.then(json => {
-        apiResults.push(json.data);
+        // cityResults.city_name = json.data[3].name;
+        // cityResults.city_ID = json.data[3].id;
+        // cityResults.population = json.data[3].population;
         console.log(json)})
 	.catch(err => console.error('error:' + err));
 
@@ -40,5 +42,5 @@ fetch(url, options)
 // Log the output for the user
 
 console.log(cityResults)
-console.log(apiResults)
+// console.log(apiResults)
 
