@@ -1,12 +1,6 @@
-// Pseudocode:
-// Create prompt for the user to enter name of the city | For development purposes create a variable with a static city name i.e. ""Aixovall". 
-// Free plan on RapidAPI limits result to 5 therefore I chose one of the results as a userCityChoice
+// Free plan on RapidAPI limits result to 5 therefore I chose one of the results - "Andorra la Vella";
 
-// let userCityChoice = prompt("Please enter name of the city:")
-
-let userCityChoice = "Andorra la Vella";
-
-// Create variables to hold information requested using API: population (GeoDB API), elevation (GeoDB API), currentTemperature (weather API)
+// Create object to hold information requested using API: population (GeoDB API), elevation (GeoDB API), currentTemperature (weather API)
 
 let cityResults = {
     city_name: '',
@@ -16,9 +10,9 @@ let cityResults = {
     currentTemperature: ''
 }
 
-// Fetch details from the GeoDB API and assign to population and elevation variables; handle error
+let apiResults = [];
 
-// const fetch = require('node-fetch');
+// Fetch details from the GeoDB API and assign to population and elevation variables; handle error
 
 const url = 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities';
 
@@ -33,13 +27,18 @@ const options = {
 fetch(url, options)
 	.then(res => res.json())
 	.then(json => {
-        cityResults.city_name = json.data[0].city;
+        apiResults.push(json.data);
         console.log(json)})
 	.catch(err => console.error('error:' + err));
 
 
 
 // Fetch details from the weather API and assign to currentTemperature variable
+
+
+
 // Log the output for the user
 
+console.log(cityResults)
+console.log(apiResults)
 
