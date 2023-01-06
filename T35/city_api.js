@@ -2,6 +2,8 @@
 
 // Create object to hold information requested using API: population (GeoDB API), elevation (GeoDB API), currentTemperature (weather API)
 
+let cityName = "Forfar";
+
 let cityResults = {
     city_name: '',
     city_ID: '',
@@ -14,7 +16,7 @@ let apiResults = [];
 
 // Fetch details from the GeoDB API and assign to population and elevation variables; handle error
 
-const url = 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=Bartoszyce';
+const url = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${cityName}`;
 
 const options = {
   method: 'GET',
@@ -27,6 +29,7 @@ const options = {
 fetch(url, options)
 	.then(res => res.json())
 	.then(json => {
+        cityResults.city_name = json.data[0].name;
         // cityResults.city_name = json.data[3].name;
         // cityResults.city_ID = json.data[3].id;
         // cityResults.population = json.data[3].population;
