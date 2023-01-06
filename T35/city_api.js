@@ -30,9 +30,8 @@ fetch(url, options)
 	.then(res => res.json())
 	.then(json => {
         cityResults.city_name = json.data[0].name;
-        // cityResults.city_name = json.data[3].name;
-        // cityResults.city_ID = json.data[3].id;
-        // cityResults.population = json.data[3].population;
+        cityResults.city_ID = json.data[0].id;
+        cityResults.population = json.data[0].population;
         console.log(json)})
 	.catch(err => console.error('error:' + err));
 
