@@ -1,12 +1,25 @@
-// Free plan on RapidAPI limits result to 5 therefore I chose one of the results - "Andorra la Vella";
+// Create object to hold information requested using API: population (GeoDB API), elevation (GeoDB API), currentTemperature (weather API)
+// ID: 123214
 
-// API details including key
+let city = {
+  city_name: 'Johannesburg',
+  ID: '131204',
+  population: '',
+  elevation: '',
+  latitude: '',
+  longitude: '',
+  currentTemperature: ''
+}
+
+// hard code city name and city ID (google)
+// change second API to the weather API or delay second request?? 
 
 let cityName = "New York City";
 
-const url1 = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${cityName}`;
+// API details including key
+// const url1 = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${cityName}`;
 
-const url2 = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/${cityResults.city_ID}`;
+const urlGeoDB = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/${city.ID}`;
 
 const options = {
   method: 'GET',
@@ -16,66 +29,34 @@ const options = {
   }
 };
 
-// Create object to hold information requested using API: population (GeoDB API), elevation (GeoDB API), currentTemperature (weather API)
 
-
-
-// ID: 123214
-
-let cityResults = {
-    city_name: '',
-    city_ID: '123214',
-    population: '',
-    elevation: '',
-    currentTemperature: ''
-}
 
 // Create a function with API requests
 
 async function fetchCityDetails() {
-  const response = await fetch(url,options);
-  const cityDetails = await response.json();
+  const[cityDetailsResponse, cityWeather] = await Promise.all([
+    fetch(urlGeoDB,options),
+    // fetch(url2,options)
+    
+  ])
 
-  console.log(cityDetails);
+  const cityDetails = await cityDetailsResponse.json();
+  // const cityDetails2 = await cityDetailsResponse2.json();
   
-  return cityDetails;
+  return [cityDetails];
 }
 
-fetchCityDetails().then(cityDetails => {
-  cityDetails;
+fetchCityDetails().then(([cityDetails]) => {
+
+    city.population = cityDetails.data.population;
+    city.elevation = cityDetails.data.elevationMeters;
+    city.latitude = cityDetails.data.latitude;
+    city.longitude = cityDetails.data.longitude;
+  
   console.log(cityDetails);
-})
-
-// Fetch details from the GeoDB API and assign to population and elevation cityResults keys; handle error
+}).catch(err => console.error('error:' + err));
 
 
-
-
-
-// fetch(url, options)
-// 	.then(res => res.json())
-// 	.then(json => {
-//         cityResults.city_name = json.data[0].name;
-//         cityResults.city_ID = json.data[0].id;
-//         cityResults.population = json.data[0].population;
-//         console.log(json)})
-// 	.catch(err => console.error('error:' + err));
-
-
-
-// fetch(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities/${cityResults.city_ID}`,options)
-// .then(res => res.json())
-// 	.then(json => {
-//         console.log(json)})
-// 	.catch(err => console.error('error:' + err));
-
-
-// Fetch details from the weather API and assign to currentTemperature variable
-
-
-
-// Log the output for the user
-
-console.log(cityResults)
+console.log(city)
 
 
