@@ -17,7 +17,7 @@ let city = {
 // API details including key
 
 let urlGeoDB = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/${city.ID}`;
-let urlWeather = `https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=${city.longitude}&lat=${city.latitude}`;
+let urlWeather;
 
 const optionsGeoDB = {
   method: "GET",
@@ -36,31 +36,38 @@ const optionsWeather = {
 };
 
 // Create async function with API requests 
-// ADD TRY AND CATCH TO CAPTURE ERRORS
+// ADD TRY AND CATCH TO CAPTURE ERRORS 🔥
+// Try adding another fetch to request city ID first 🔥
 
 async function fetchCityDetails() {
-  const cityDetailsResponse = await fetch(urlGeoDB, optionsGeoDB);
-  const cityDetails = await cityDetailsResponse.json();
+  // create a variable with fetch method requesting city details from ulrGeoDB; 
+  const cityDetailsResponse = await fetch(urlGeoDB, optionsGeoDB); // use await keyword - script won't run until this request is complete
+  const cityDetails = await cityDetailsResponse.json(); // parsing data from api request
 
-  city.population = cityDetails.data.population;
+  // assigning received details to city object
+  city.population = cityDetails.data.population; 
   city.elevation = cityDetails.data.elevationMeters;
   city.latitude = cityDetails.data.latitude.toString();
   city.longitude = cityDetails.data.longitude.toString();
 
+  // updating ulr string with received details for lon and lat
   urlWeather = `https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=${city.longitude}&lat=${city.latitude}`;
 
+  // delaying the script to avoid making simultaneous API requests resulting in error
   await new Promise((resolve) => setTimeout(resolve, 5000));
 
   console.log("whoop");
   console.log(city);
 
+   // create a variable with fetch method requesting weather details from urlWeather; 
   const weatherDetailsResponse = await fetch(urlWeather, optionsWeather);
-  const weatherDetails = await weatherDetailsResponse.json();
+  const weatherDetails = await weatherDetailsResponse.json(); // parsing data
 
   console.log(weatherDetails);
 
 }
 
+// calling the function
 fetchCityDetails();
 
 
