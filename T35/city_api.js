@@ -11,11 +11,12 @@ let city = {
   currentTemperature: "",
 };
 
+let weatherDeets;
 
 // API details including key
 
 let urlGeoDB_ID = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?countryIds=ZA&namePrefix=${city.city_name}&types=CITY`;
-let urlGeoDB = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/${city.ID}`;
+let urlGeoDB;
 let urlWeather;
 
 const optionsGeoDB = {
@@ -34,7 +35,7 @@ const optionsWeather = {
   },
 };
 
-// Create async function with API requests 
+// Create async function with API requests
 // ADD TRY AND CATCH TO CAPTURE ERRORS - HERE
 // Try adding another fetch to request city ID first - HERE
 
@@ -44,14 +45,22 @@ async function fetchCityDetails() {
   const cityID = await cityIDResponse.json();
 
   // assigning received ID to the city object
-    city.ID = cityID.data[0].id;
+  city.ID = cityID.data[0].id;
 
-  // create a variable with fetch method requesting city details from ulrGeoDB; 
+  // delaying the script to avoid making simultaneous API requests resulting in error
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
+// updating ulr string with received city ID
+  urlGeoDB = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/${city.ID}`;
+
+  // create a variable with fetch method requesting city details from ulrGeoDB;
   const cityDetailsResponse = await fetch(urlGeoDB, optionsGeoDB); // use await keyword - script won't run until this request is complete
   const cityDetails = await cityDetailsResponse.json(); // parsing data from api request
 
+  console.log(cityDetails);
+
   // assigning received details to the city object
-  city.population = cityDetails.data.population; 
+  city.population = cityDetails.data.population;
   city.elevation = cityDetails.data.elevationMeters;
   city.latitude = cityDetails.data.latitude.toString();
   city.longitude = cityDetails.data.longitude.toString();
@@ -60,21 +69,23 @@ async function fetchCityDetails() {
   urlWeather = `https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=${city.longitude}&lat=${city.latitude}`;
 
   // delaying the script to avoid making simultaneous API requests resulting in error
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
-  console.log("whoop");
-  console.log(city);
-
-   // create a variable with fetch method requesting weather details from urlWeather; 
-  const weatherDetailsResponse = await fetch(urlWeather, optionsWeather);
+  // create a variable with fetch method requesting weather details from urlWeather;
+  // PLEASE NOTE THAT WEATHERBIT CAPPED ME AT 25 CALLS (see jpeg saved in the folder) - THEREFORE I USED A DIFFERENT API TO COMPLETE THE TASK
+  // const weatherDetailsResponse = await fetch(urlWeather, optionsWeather); 
+  
+  const weatherDetailsResponse = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${city.latitude}&longitude=${city.longitude}&hourly=temperature_2m&current_weather=true`);
   const weatherDetails = await weatherDetailsResponse.json(); // parsing data
+
+  city.currentTemperature = weatherDetails.current_weather.temperature;
 
   console.log(weatherDetails);
 
+  
 }
 
 // calling the function
 fetchCityDetails();
-
 
 console.log(city);
