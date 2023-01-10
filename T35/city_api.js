@@ -1,8 +1,7 @@
 // Create object to hold information requested using API: population (GeoDB API), elevation (GeoDB API), currentTemperature (weather API)
-// ID: 123214
 
 let city = {
-  city_name: "Johannesburg",
+  city_name: "JOhannesburg",
   ID: "",
   population: "",
   elevation: "",
@@ -11,8 +10,9 @@ let city = {
   currentTemperature: "",
 };
 
-// API details including key
+city.city_name = prompt("Please choose a city in South Africa🌍");
 
+// API details including key
 let urlGeoDB_ID = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?countryIds=ZA&namePrefix=${city.city_name}&types=CITY`;
 let urlGeoDB,urlWeather;
 
@@ -33,8 +33,6 @@ const optionsWeather = {
 };
 
 // Create async function with API requests
-// ADD TRY AND CATCH TO CAPTURE ERRORS - HERE
-// Try adding another fetch to request city ID first - HERE
 
 async function fetchCityDetails() {
   // create a variable with fetch method requesting city ID details from urlGeoDB_ID
