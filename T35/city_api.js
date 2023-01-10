@@ -69,7 +69,7 @@ async function fetchCityDetails() {
   // PLEASE NOTE THAT WEATHERBIT CAPPED ME AT 25 CALLS (see jpeg saved in the folder) - THEREFORE I USED A DIFFERENT API TO COMPLETE THE TASK
 
   // const weatherDetailsResponse = await fetch(urlWeather, optionsWeather); 
-  
+
   const weatherDetailsResponse = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${city.latitude}&longitude=${city.longitude}&hourly=temperature_2m&current_weather=true`);
   const weatherDetails = await weatherDetailsResponse.json(); // parsing data
 
