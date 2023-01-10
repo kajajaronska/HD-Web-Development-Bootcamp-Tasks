@@ -3,7 +3,7 @@
 
 let city = {
   city_name: "Johannesburg",
-  ID: "131204",
+  ID: "",
   population: "",
   elevation: "",
   latitude: "",
@@ -12,10 +12,9 @@ let city = {
 };
 
 
-// let cityName = "New York City";
-
 // API details including key
 
+let urlGeoDB_ID = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?countryIds=ZA&namePrefix=${city.city_name}&types=CITY`;
 let urlGeoDB = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/${city.ID}`;
 let urlWeather;
 
@@ -36,15 +35,22 @@ const optionsWeather = {
 };
 
 // Create async function with API requests 
-// ADD TRY AND CATCH TO CAPTURE ERRORS 🔥
-// Try adding another fetch to request city ID first 🔥
+// ADD TRY AND CATCH TO CAPTURE ERRORS - HERE
+// Try adding another fetch to request city ID first - HERE
 
 async function fetchCityDetails() {
+  // create a variable with fetch method requesting city ID details from urlGeoDB_ID
+  const cityIDResponse = await fetch(urlGeoDB_ID, optionsGeoDB);
+  const cityID = await cityIDResponse.json();
+
+  // assigning received ID to the city object
+    city.ID = cityID.data[0].id;
+
   // create a variable with fetch method requesting city details from ulrGeoDB; 
   const cityDetailsResponse = await fetch(urlGeoDB, optionsGeoDB); // use await keyword - script won't run until this request is complete
   const cityDetails = await cityDetailsResponse.json(); // parsing data from api request
 
-  // assigning received details to city object
+  // assigning received details to the city object
   city.population = cityDetails.data.population; 
   city.elevation = cityDetails.data.elevationMeters;
   city.latitude = cityDetails.data.latitude.toString();
