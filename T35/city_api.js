@@ -11,13 +11,10 @@ let city = {
   currentTemperature: "",
 };
 
-let weatherDeets;
-
 // API details including key
 
 let urlGeoDB_ID = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?countryIds=ZA&namePrefix=${city.city_name}&types=CITY`;
-let urlGeoDB;
-let urlWeather;
+let urlGeoDB,urlWeather;
 
 const optionsGeoDB = {
   method: "GET",
@@ -48,7 +45,7 @@ async function fetchCityDetails() {
   city.ID = cityID.data[0].id;
 
   // delaying the script to avoid making simultaneous API requests resulting in error
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
 // updating ulr string with received city ID
   urlGeoDB = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/${city.ID}`;
@@ -57,7 +54,6 @@ async function fetchCityDetails() {
   const cityDetailsResponse = await fetch(urlGeoDB, optionsGeoDB); // use await keyword - script won't run until this request is complete
   const cityDetails = await cityDetailsResponse.json(); // parsing data from api request
 
-  console.log(cityDetails);
 
   // assigning received details to the city object
   city.population = cityDetails.data.population;
@@ -69,23 +65,29 @@ async function fetchCityDetails() {
   urlWeather = `https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=${city.longitude}&lat=${city.latitude}`;
 
   // delaying the script to avoid making simultaneous API requests resulting in error
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   // create a variable with fetch method requesting weather details from urlWeather;
   // PLEASE NOTE THAT WEATHERBIT CAPPED ME AT 25 CALLS (see jpeg saved in the folder) - THEREFORE I USED A DIFFERENT API TO COMPLETE THE TASK
+
   // const weatherDetailsResponse = await fetch(urlWeather, optionsWeather); 
   
   const weatherDetailsResponse = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${city.latitude}&longitude=${city.longitude}&hourly=temperature_2m&current_weather=true`);
   const weatherDetails = await weatherDetailsResponse.json(); // parsing data
 
+  // assigning received details to the city object
   city.currentTemperature = weatherDetails.current_weather.temperature;
 
-  console.log(weatherDetails);
-
-  
+    return [cityDetails, cityID, weatherDetails];
 }
 
 // calling the function
-fetchCityDetails();
+fetchCityDetails()
+.then(()=> {
+  console.log(`Your chosen city is: ${city.city_name}.\n\nPlease see more details below:\nID: ${city.ID}\nPopulation: ${city.population}\nElevation: ${city.elevation}m\nCurrent Temperature: ${city.currentTemperature}\u2103`);
+})
+.catch(err => {
+  console.log(err);
+})
 
-console.log(city);
+
